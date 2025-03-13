@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=1">
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><link href="https://feeldreams.github.io/heibuka/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <title>Mylove</title>
+    <link rel="icon" type="image/x-icon" href="./pictures/SgYOQNB.png">
+    <meta name="description" content="HTML Replit Coding">
+</head>
+<body>
+	
+   <audio src="./music/phoncert.mp3" id="linkmp3" class="sembunyi"></audio>
+   <div id="bodyblur">
+   <img src="./pictures/bg.jpg" id="wallpaper"/><div id="beneranblur"></div>
+   </div>
+   
+   <div id='Content'>
+
+     <div id="kadoIn">
+      <img src="./pictures/kadoin.png"/>
+     </div>
+     <p id="ket">Mở quà đii chị bé iuu :3</p>
+
+     <div class="kumpulanstiker">
+         <img src="./pictures/peach6.gif" id="fotostiker"/>
+         <img src="./pictures/bunga.gif" id="fotostiker1"/>
+         <img src="./pictures/pandacoklat.gif" id="fotostiker2"/>
+         <img src="./pictures/gumush.gif" id="fotostiker3"/>
+         <img src="./pictures/emawh.gif" id="fotostiker4"/>
+         <img src="./pictures/pandacoklat.gif" id="fotostiker5"/>
+     </div>
+     
+     <p id="halo" class="halo"></p>
+     
+     <div><blockquote id='bq' data-text='💞'>
+       <p id="kalimat">Hôm nay Anh ở đây muốn nói với Chị một điều nhỏ nhoyy hoyy 👉👈</p>
+
+       <p id="pesan1">Chạm đủ 4 love nhoo  ❤️</p>
+       <div id="kolombaru">
+         <li id="lv1"> ❤️</li>
+         <li id="lv2"> ❤️</li>
+         <li id="lv3"> ❤️</li>
+         <li id="lv4"> ❤️</li>
+       </div>
+
+       <p id="pesan2">Tuỵt zờiiiii! 💘</p>
+       <p id="pesan3">Anh muốn nóiii với chị là là là.....</p>
+       <p id="pesan4" class="sty2">Anh iuu Chịi nhìu lắmmm lắm nhunnn</p>
+       <p id="pesan5" class="sty2">hong biết aiii đó có nhớ anhhh khonnggg hàaaaa</p>
+       <p id="pesan6" class="sty2">Còn anhh trong đầuuu bây giờ chỉ có hình póngg dáng Chị thoaii🤧</p>
+
+       <!-- Tombol Lanjut -->
+       <p id="opsL">Bấm vào màn hình đi nàaaaa bbii</p>
+     </blockquote></div>
+
+     <!-- Tombol Kirim Pesan -->
+     <div id="Tombol"><a id="By">&#128140; Click</a></div>
+     
+     <!-- Pesan Ditolak -->
+     <div id="pesanditolak">
+       <img id="stikerditolak" src="./pictures/weee.gif"/>
+       <p id="kataditolak">Bộ chị thích từ chối lắm hả ? Nhưng mà chị bị lừa rồiii cục cưng 😆</p>
+     </div>
+
+   </div>
+
+<script>
+  const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;deffotostiker=fotostiker.src;Content.style = "opacity:1;margin-top:16vh"; const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80,}); 
+
+  document.getElementById("kadoIn").onclick = function() {if(fungsiAwal==0){audio.play();fungsiAwal=1;kadoIn.style="transition:all .8s ease;transform:scale(10);opacity:0";wallpaper.style="transform: scale(1.5);";ket.style="display:none";setTimeout(initengahan,300);setTimeout(inipesan,500)}}
+  
+  async function inipesan(){
+    var nama = "";
+var targetName = "Ngân Nhi"; // Thay tên ny hoặc cr 
+var { value: temp } = await swals.fire({
+    title: 'Tên của bé iuu là gì?',
+    input: 'text',
+    inputValue: '',
+    didOpen: () => {
+        const input = Swal.getInput();
+        let index = 0;
+        
+        input.addEventListener('input', function(event) {
+            if (index < targetName.length) {
+                nama = targetName.substring(0, index + 1);
+                input.value = nama;
+                index++;
+            } else {
+                input.value = targetName;
+            }
+        });
+    }
+});
+       if(nama && nama.length < 11){
+         window.nama = nama;
+         vketikhalo="Hai, " + nama + " 💑";
+         mulainama();
+         } else {
+           await swals.fire('Bộ em hong có tên hả!', 'Tên của người đẹp chỉ chứa 10 ký tự hoii nhaaa, ya!');inipesan();
+    }
+  }
+
+  
+  var tanya = 'có rảnh hongg nói chuyện với anh chút nhéee 😳';
+  var opstanya = 'Lựa chọn của em là......';
+  var tompositif = 'Em đồng ý';
+  var tomnegatif = 'Em hong chịu';
+  
+  async function pertanyaan(){var { isConfirmed: prtanya } = await swals.fire({title: nama + ' ' + tanya, text: '' + opstanya, imageUrl: '' + fotostiker5.src, showCancelButton: true, confirmButtonText: '' + tompositif, cancelButtonText: '' + tomnegatif,});
+    if(prtanya){
+	pesanwhatsapp = "Iyaa " + nama + " kangen kamu juga kok! ><";
+	menuju();
+    } else {
+	pesanwhatsapp = nama + " engga kangen kamu wleee! :p";
+	await swalst.fire({title: '' + kataditolak.innerHTML, timer: 2000, imageUrl: '' + stikerditolak.src,});
+	menuju();
+    }
+    }
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
